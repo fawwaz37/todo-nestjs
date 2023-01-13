@@ -1,16 +1,4 @@
-import {
-  Post,
-  Res,
-  Body,
-  HttpStatus,
-  Get,
-  Query,
-  Param,
-  Put,
-  Delete,
-  Render,
-  Req,
-} from '@nestjs/common';
+import { Post, Res, Body, HttpStatus, Get, Query, Param, Put, Delete, Render, Req } from '@nestjs/common';
 import { Controller } from '@nestjs/common';
 import { NotFoundException } from '@nestjs/common/exceptions';
 import { Types } from 'mongoose';
@@ -38,18 +26,8 @@ export class TodoController {
     weekday[6] = 'Saturday 😴';
     let day = weekday[date.getDay()];
 
-    var randomWordArray = Array(
-      "Oh my, it's ",
-      "Whoop, it's ",
-      'Happy ',
-      "Seems it's ",
-      "Awesome, it's ",
-      'Have a nice ',
-      'Happy fabulous ',
-      'Enjoy your ',
-    );
-    var randomWord =
-      randomWordArray[Math.floor(Math.random() * randomWordArray.length)];
+    var randomWordArray = Array("Oh my, it's ", "Whoop, it's ", 'Happy ', "Seems it's ", "Awesome, it's ", 'Have a nice ', 'Happy fabulous ', 'Enjoy your ');
+    var randomWord = randomWordArray[Math.floor(Math.random() * randomWordArray.length)];
 
     return { day, randomWord, todos: array };
   }
@@ -96,11 +74,7 @@ export class TodoController {
   }
 
   @Put('/data/:id')
-  public async updateTodo(
-    @Res() res: any,
-    @Param('id') id: string,
-    @Req() req: any,
-  ) {
+  public async updateTodo(@Res() res: any, @Param('id') id: string, @Req() req: any) {
     if (!Types.ObjectId.isValid(id)) {
       throw new NotFoundException('Wrong Type Id');
     }

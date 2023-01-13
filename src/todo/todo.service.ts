@@ -56,18 +56,8 @@ export class TodoService {
     weekday[6] = 'Saturday 😴';
     let day = weekday[date.getDay()];
 
-    var randomWordArray = Array(
-      "Oh my, it's ",
-      "Whoop, it's ",
-      'Happy ',
-      "Seems it's ",
-      "Awesome, it's ",
-      'Have a nice ',
-      'Happy fabulous ',
-      'Enjoy your ',
-    );
-    var randomWord =
-      randomWordArray[Math.floor(Math.random() * randomWordArray.length)];
+    var randomWordArray = Array("Oh my, it's ", "Whoop, it's ", 'Happy ', "Seems it's ", "Awesome, it's ", 'Have a nice ', 'Happy fabulous ', 'Enjoy your ');
+    var randomWord = randomWordArray[Math.floor(Math.random() * randomWordArray.length)];
     return { day, randomWord };
   }
 }

@@ -5,9 +5,7 @@ import { TodoController } from './todo.controller';
 import { Todo, TodoSchema } from 'src/schemas/todo.schema';
 
 @Module({
-  imports: [
-    MongooseModule.forFeature([{ name: Todo.name, schema: TodoSchema }]),
-  ],
+  imports: [MongooseModule.forFeature([{ name: Todo.name, schema: TodoSchema }])],
   providers: [TodoService],
   controllers: [TodoController],
 })
